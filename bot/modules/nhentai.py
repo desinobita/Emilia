@@ -56,7 +56,7 @@ async def _download(_id, dl_path, outfile_path):
     
     imgs[0].save(outfile_path, save_all = True, quality = 100, append_images = imgs[1:])
 
-@EMILIA.on_message(filters.command(["nhentai"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["nhentai"], prefixes = "/"))
 async def nhentai(client, message):
     query = message.text.split(maxsplit = 1)
     if len(query) < 2:

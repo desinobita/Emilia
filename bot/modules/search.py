@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from bot import EMILIA, jikan
 from .mal import data_from_id
 
-@EMILIA.on_message(filters.command(["anime"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["anime"], prefixes = "/"))
 async def get_anime(client, message):
     query = message.text.split(maxsplit = 1)
     if len(query) < 2:
@@ -24,7 +24,7 @@ async def get_anime(client, message):
     except Exception as e:
         await EMILIA.send_message(chat_id = message.chat.id, text = f"**Error:**\n{e}")
 
-@EMILIA.on_message(filters.command(["manga"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["manga"], prefixes = "/"))
 async def get_manga(client, message):
     query = message.text.split(maxsplit = 1)
     if len(query) < 2:
@@ -45,7 +45,7 @@ async def get_manga(client, message):
     except Exception as e:
         await EMILIA.send_message(chat_id = message.chat.id, text = f"**Error:**\n{e}")
 
-@EMILIA.on_message(filters.command(["character"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["character"], prefixes = "/"))
 async def get_character(client, message):
     query = message.text.split(maxsplit = 1)
     if len(query) < 2:

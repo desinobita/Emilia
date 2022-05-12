@@ -64,7 +64,7 @@ def data_from_id(category, mal_id):                             # category: anim
     except Exception as e:
         return e
 
-@EMILIA.on_message(filters.command(["mal_id"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["mal_id"], prefixes = "/"))
 async def mal(client, message):
     query = message.text.split(maxsplit = 1)
     if len(query) < 2:

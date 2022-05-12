@@ -1,4 +1,4 @@
 class Config(object):
-    API_ID = int("")
+    API_ID = ""
     API_HASH = ""
     BOT_TOKEN = ""

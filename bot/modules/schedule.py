@@ -1,7 +1,7 @@
 from bot import EMILIA, jikan
 from pyrogram import filters
 
-@EMILIA.on_message(filters.command(["schedule"], prefixes = "/") & ~filters.edited)
+@EMILIA.on_message(filters.command(["schedule"], prefixes = "/"))
 async def schedule(client, message):
     query = message.text.split()
     if len(query) < 2:
